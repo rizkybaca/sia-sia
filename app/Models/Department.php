@@ -11,4 +11,9 @@ class Department extends Model
     use HasFactory, SoftDeletes;
 
     protected $guarded = ['id'];
+
+    public function grades()
+    {
+        return $this->hasMany(Grade::class);
+    }
 }

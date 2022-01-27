@@ -11,4 +11,14 @@ class TeacherProfile extends Model
     use HasFactory, SoftDeletes;
 
     protected $guarded = ['id'];
+
+    public function courses()
+    {
+        return $this->hasMany(Course::class, 'teacher_code', 'id');
+    }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

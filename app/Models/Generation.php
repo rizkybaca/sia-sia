@@ -11,4 +11,9 @@ class Generation extends Model
     use HasFactory, SoftDeletes;
 
     protected $guarded = ['id'];
+
+    public function curriculum()
+    {
+        return $this->belongsTo(Curriculum::class);
+    }
 }
